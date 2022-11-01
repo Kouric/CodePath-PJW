@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# APP_NAME_HERE
+# Spotifly
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,16 +11,17 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+
+Spotifly is an app where users can earch for songs and create their own playlists. Users can also track their Spotify data such as their most listened to songs, albums, and genres. Users can also view artist info.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Music
+- **Mobile:** The app is being developed for mobile devices but it is possible to be used on desktop devices as well.
+- **Story:** Gets Spotify song data from the Spotify API. User can search for songs and create playlists. Users can view their playlists, add and remove songs, and delete playlists. Users can listen to the song.
+- **Market:** Any person can use this app.
+- **Habit:** This app can be used often if a user wants to listen to music and check their Spotify data.
+- **Scope:** First we could begin by showing users their basic listening info. Later, we could expand the app to feature more detailed statistics such as global statistics or artist information.
 
 ## Product Spec
 
