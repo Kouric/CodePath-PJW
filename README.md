@@ -29,13 +29,15 @@ Spotifly is an app where users can earch for songs and create their own playlist
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can listen to music
+* User can log in
+* User can log out
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can stay logged in across restarts
+* User can save favorite songs
+* User can see editor recommendations
 
 ### 2. Screen Archetypes
 
