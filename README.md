@@ -65,9 +65,12 @@ Spotifly is an app where users can earch for songs and create their own playlist
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![](https://i.imgur.com/AUWHeLl.jpg)
+<img src="https://i.imgur.com/AUWHeLl.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+![](https://i.imgur.com/57ZVMHa.jpg)
+<img src="https://i.imgur.com/57ZVMHa.jpg" width=600>
 
 ### [BONUS] Interactive Prototype
 
