@@ -52,18 +52,16 @@ Spotifly is an app where users can earch for songs and create their own playlist
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Home
+* Search
+* Favorites
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Forced Log-in -> Account creation if no log in is available
+* Home screen -> Can view recently played music
+* Search screen -> Can search up songs to listen to
+* Favorites screen -> Can pick from liked songs
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
