@@ -43,7 +43,7 @@ Spotifly is an app where users can earch for songs and create their own playlist
 
 * Welcome Screen
    * User selects to login or register for a new account
-   * This screen is will not display if user is logged in
+   * This screen will not display if user is logged in
 * Login Screen
    * User types username and password
 * Register Screen
