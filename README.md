@@ -44,13 +44,13 @@ Spotifly is an app where users can earch for songs and create their own playlist
 * Welcome Screen
    * Login
    * Register
-* Home
+* Home Screen
    * Stream - User select recently played song
-* Search
+* Search Screen
    * Stream - User searches and scrolls for songs
-* Favorites
+* Favorites Screen
    * Stream - User scroll for favorite songs
-* Media Player
+* Media Player Screen
    * Allowing user the control of media playback
 
 ### 3. Navigation
