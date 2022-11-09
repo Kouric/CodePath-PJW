@@ -41,12 +41,17 @@ Spotifly is an app where users can earch for songs and create their own playlist
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Welcome Screen
+   * Login
+   * Register
+* Home
+   * Stream - User select recently played song
+* Search
+   * Stream - User searches and scrolls for songs
+* Favorites
+   * Stream - User scroll for favorite songs
+* Media Player
+   * Allowing user the control of media playback
 
 ### 3. Navigation
 
