@@ -85,10 +85,34 @@ Spotifly is an app where users can earch for songs and create their own playlist
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### Post
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field)
+   | author        | Pointer to User| author's name 
+   | action       | String   | description of action
+   | artist    |    String    | name of the artist
+   | song     | String   | name of the song
+   | album    | String    | name of the album
+   | createdAt     | DateTime | date when post is created (default field) 
+   
+   
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of network requests by screen
+- Login Screen
+    - (GET) Username validation
+    - (GET) Password validation
+- Register Screen 
+    - (Create/POST) Create a new user
+    - (GET) Validate username is available
+- Home Screen
+    - (Read/GET) Recently played songs
+    - (Read/GET) Our picks
+    - (Read/GET) Best album played
+- Favorites
+    - (Read/GET) Query logged in user object
+- Player
+    - (GET) Get song to play
+    - (POST) Add song to favorites
+    - (DELETE) Remove song from favorites   
