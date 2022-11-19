@@ -30,6 +30,7 @@ Spotifly is an app where users can earch for songs and create their own playlist
 **Required Must-have Stories**
 
 * User can listen to music
+* User has a launch screen with buttons for login/logout (COMPLETED)
 * User can log in (in progress)
 * User can log out (in progress)
 
@@ -116,3 +117,6 @@ Spotifly is an app where users can earch for songs and create their own playlist
     - (GET) Get song to play
     - (POST) Add song to favorites
     - (DELETE) Remove song from favorites   
+
+GIFS:
+![gif of launch screen](https://imgur.com/WhzWbYz)
