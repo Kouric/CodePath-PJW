@@ -119,4 +119,4 @@ Spotifly is an app where users can earch for songs and create their own playlist
     - (DELETE) Remove song from favorites   
 
 GIFS:
-![gif of launch screen](https://imgur.com/WhzWbYz)
+![gif of launch screen](https://imgur.com/WhzWbYz.gif)
