@@ -47,7 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="linkButton" destination="vkS-iL-N9a" id="kff-N2-fsD"/>
-                        <segue destination="iph-0Q-bZT" kind="presentation" identifier="LinkToHome" id="Us8-2h-Ssr"/>
+                        <segue destination="8Uz-w4-zPi" kind="show" identifier="LinkSegue" id="gj1-0V-xWT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,49 +55,50 @@
             <point key="canvasLocation" x="34.782608695652179" y="80.357142857142847"/>
         </scene>
         <!--Top Artists-->
-        <scene sceneID="Oy7-58-Bdb">
+        <scene sceneID="7np-Py-8lE">
             <objects>
-                <tableViewController id="aQc-3B-ZXk" customClass="TopArtistsTableViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ObU-im-q2W">
+                <tableViewController id="Mat-q9-piy" customClass="ArtistsTableViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7K-be-EVU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BM7-GH-i9T">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uWi-CP-gvl">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BM7-GH-i9T" id="BMp-hU-zAj">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uWi-CP-gvl" id="fsp-hS-1fc">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="aQc-3B-ZXk" id="UFh-l6-tlr"/>
-                            <outlet property="delegate" destination="aQc-3B-ZXk" id="FJS-6k-jEh"/>
+                            <outlet property="dataSource" destination="Mat-q9-piy" id="JUC-b6-IlE"/>
+                            <outlet property="delegate" destination="Mat-q9-piy" id="y5U-3f-NfY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Artists" id="VkV-yH-OUo"/>
+                    <navigationItem key="navigationItem" title="Top Artists" id="CaI-RU-9fk"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RmA-gs-5O0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3L-4y-JZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="80"/>
+            <point key="canvasLocation" x="1670" y="80"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="96v-yE-7Z3">
+        <scene sceneID="P1M-kp-Sk1">
             <objects>
-                <navigationController id="iph-0Q-bZT" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4bF-ZZ-VqY">
+                <navigationController id="8Uz-w4-zPi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5ic-y8-cBB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dSv-Uu-REx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aQc-3B-ZXk" kind="relationship" relationship="rootViewController" id="bsL-r8-xRt"/>
+                        <segue destination="Mat-q9-piy" kind="relationship" relationship="rootViewController" id="Y90-Ax-pXs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fGK-qy-wy5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NT0-f9-D8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="80"/>
+            <point key="canvasLocation" x="780" y="80"/>
         </scene>
     </scenes>
     <resources>

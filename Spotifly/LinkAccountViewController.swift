@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SafariServices
+import WebKit
 
 class LinkAccountViewController: UIViewController {
 
@@ -16,55 +16,123 @@ class LinkAccountViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var linkButton: UIButton! {
-        didSet{
-            linkButton.layer.cornerRadius = linkButton.bounds.height/2
+    @IBOutlet weak var linkButton: UIButton!
+    
+    @IBAction func linkAccount(_ sender: UIButton) {
+       spotifyAuthVC()
+    }
+    
+    var webView = WKWebView()
+        func spotifyAuthVC() {
+            // Create Spotify Auth ViewController
+            let spotifyVC = UIViewController()
+            // Create WebView
+            let webView = WKWebView()
+            webView.navigationDelegate = self
+            spotifyVC.view.addSubview(webView)
+            webView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                webView.topAnchor.constraint(equalTo: spotifyVC.view.topAnchor),
+                webView.leadingAnchor.constraint(equalTo: spotifyVC.view.leadingAnchor),
+                webView.bottomAnchor.constraint(equalTo: spotifyVC.view.bottomAnchor),
+                webView.trailingAnchor.constraint(equalTo: spotifyVC.view.trailingAnchor)
+                ])
+
+            let authURLFull = "https://accounts.spotify.com/authorize?response_type=token&client_id=" + SpotifyConstants.CLIENT_ID + "&scope=" + SpotifyConstants.SCOPE + "&redirect_uri=" + SpotifyConstants.REDIRECT_URI + "&show_dialog=false"
+
+            let urlRequest = URLRequest.init(url: URL.init(string: authURLFull)!)
+            webView.load(urlRequest)
+
+            // Create Navigation Controller
+            let navController = UINavigationController(rootViewController: spotifyVC)
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelAction))
+            spotifyVC.navigationItem.leftBarButtonItem = cancelButton
+            let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshAction))
+            spotifyVC.navigationItem.rightBarButtonItem = refreshButton
+            let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            navController.navigationBar.titleTextAttributes = textAttributes
+            spotifyVC.navigationItem.title = "spotify.com"
+            navController.navigationBar.isTranslucent = false
+            navController.navigationBar.tintColor = UIColor.white
+            navController.navigationBar.barTintColor = UIColor.black
+            navController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+            navController.modalTransitionStyle = .coverVertical
+
+            self.present(navController, animated: true, completion: nil)
         }
+
+        @objc func cancelAction() {
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        @objc func refreshAction() {
+            self.webView.reload()
+        }
+    
+}
+
+extension LinkAccountViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        RequestForCallbackURL(request: navigationAction.request)
+        decisionHandler(.allow)
     }
-    
-    
-    @IBAction func linkAccount(_ sender: Any) {
-        guard let url = URL(string: "https://accounts.spotify.com/authorize?client_id=b934184dcb7a49998b363e237074d04a&response_type=code&redirect_uri=https%3A%2F%2Fwww.google.com%2F&scope=user-top-read") else { return }
-        let safariVC = SFSafariViewController(url: url)
-        safariVC.preferredBarTintColor = .black
-        safariVC.preferredControlTintColor = .systemGreen
-        safariVC.delegate = self
-        present(safariVC, animated: true)
-        
-    }
-    
-    private func authorizeUser(with urlString: String){
-        let index = urlString.index(urlString.startIndex, offsetBy: 29)
-        let code = String(urlString.suffix(from: index))
-        
-        print("code is ", code)
-        
-        NetworkManager.shared.authorizeUser(with: code) { result in
-            guard let token = result else { return }
-            DispatchQueue.main.async{
-                guard let listVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier:TopArtistsTableViewController.reuseID) as?
-                        TopArtistsTableViewController else { return }
-                listVC.token = token
-                self.navigationController?.pushViewController(listVC, animated: true)
+
+    func RequestForCallbackURL(request: URLRequest) {
+        // Get the access token string after the '#access_token=' and before '&token_type='
+        let requestURLString = (request.url?.absoluteString)! as String
+        if requestURLString.hasPrefix(SpotifyConstants.REDIRECT_URI) {
+            if requestURLString.contains("#access_token=") {
+                if let range = requestURLString.range(of: "=") {
+                    let spotifAcTok = requestURLString[range.upperBound...]
+                    if let range = spotifAcTok.range(of: "&token_type=") {
+                        let spotifAcTokFinal = spotifAcTok[..<range.lowerBound]
+                        handleAuth(spotifyAccessToken: String(spotifAcTokFinal))
+                    }
+                }
             }
         }
     }
     
-    
-    
-    private func closeSafari(){
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: false)
-    }
+    func handleAuth(spotifyAccessToken: String) {
+            fetchSpotifyProfile(accessToken: spotifyAccessToken)
 
-}
+            // Close Spotify Auth ViewController after getting Access Token
+            self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "LinkSegue", sender: self)
+        }
 
-extension LinkAccountViewController: SFSafariViewControllerDelegate {
-    
-    func safariViewController(_ controller: SFSafariViewController, initialLoadDidRedirectTo URL: URL) {
-        let currentURL = URL.absoluteURL
-        guard currentURL.absoluteString.contains("https://www.google.com/?code=") else { return }
-        authorizeUser(with: currentURL.absoluteString)
-        closeSafari()
-    }
+
+        func fetchSpotifyProfile(accessToken: String) {
+            let tokenURLFull = "https://api.spotify.com/v1/me"
+            let verify: NSURL = NSURL(string: tokenURLFull)!
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: verify as URL)
+            request.addValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+                if error == nil {
+                    let result = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [AnyHashable: Any]
+                    //AccessToken
+                    print("Spotify Access Token: \(accessToken)")
+                    //Spotify Handle
+                    let spotifyId: String! = (result?["id"] as! String)
+                    print("Spotify Id: \(spotifyId ?? "")")
+                    //Spotify Display Name
+                    let spotifyDisplayName: String! = (result?["display_name"] as! String)
+                    print("Spotify Display Name: \(spotifyDisplayName ?? "")")
+                    //Spotify Email
+                    let spotifyEmail: String! = (result?["email"] as! String)
+                    print("Spotify Email: \(spotifyEmail ?? "")")
+                    //Spotify Profile Avatar URL
+                    let spotifyAvatarURL: String!
+                    let spotifyProfilePicArray = result?["images"] as? [AnyObject]
+                    if (spotifyProfilePicArray?.count)! > 0 {
+                        spotifyAvatarURL = spotifyProfilePicArray![0]["url"] as? String
+                    } else {
+                        spotifyAvatarURL = "Not exists"
+                    }
+                    print("Spotify Profile Avatar URL: \(spotifyAvatarURL ?? "")")
+                }
+            }
+            task.resume()
+        }
 }

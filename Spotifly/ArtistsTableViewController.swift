@@ -1,5 +1,5 @@
 //
-//  TopArtistsTableViewController.swift
+//  ArtistsTableViewController.swift
 //  Spotifly
 //
 //  Created by David Barcenas on 11/30/22.
@@ -7,11 +7,7 @@
 
 import UIKit
 
-class TopArtistsTableViewController: UITableViewController {
-    
-    static let reuseID = "TopArtistsTableViewController"
-    private var arists: [Artist] = []
-    var token: String?
+class ArtistsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
