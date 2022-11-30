@@ -13,7 +13,11 @@
 		63088D0B2928804300A243EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63088D092928804300A243EF /* Main.storyboard */; };
 		63088D0D2928804400A243EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63088D0C2928804400A243EF /* Assets.xcassets */; };
 		63088D102928804400A243EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63088D0E2928804400A243EF /* LaunchScreen.storyboard */; };
-		630A82102936D13A000D4F33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A820F2936D13A000D4F33 /* LoginViewController.swift */; };
+		630A821229371E5F000D4F33 /* LinkAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A821129371E5F000D4F33 /* LinkAccountViewController.swift */; };
+		630A821629372322000D4F33 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A821529372322000D4F33 /* NetworkManager.swift */; };
+		630A8218293725CD000D4F33 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A8217293725CD000D4F33 /* Token.swift */; };
+		630A821C29372CF9000D4F33 /* TopArtistsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A821B29372CF9000D4F33 /* TopArtistsTableViewController.swift */; };
+		630A821E293739BA000D4F33 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A821D293739BA000D4F33 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +29,11 @@
 		63088D0C2928804400A243EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63088D0F2928804400A243EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63088D112928804400A243EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		630A820F2936D13A000D4F33 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		630A821129371E5F000D4F33 /* LinkAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkAccountViewController.swift; sourceTree = "<group>"; };
+		630A821529372322000D4F33 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		630A8217293725CD000D4F33 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		630A821B29372CF9000D4F33 /* TopArtistsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArtistsTableViewController.swift; sourceTree = "<group>"; };
+		630A821D293739BA000D4F33 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +73,11 @@
 				63088D0C2928804400A243EF /* Assets.xcassets */,
 				63088D0E2928804400A243EF /* LaunchScreen.storyboard */,
 				63088D112928804400A243EF /* Info.plist */,
-				630A820F2936D13A000D4F33 /* LoginViewController.swift */,
+				630A821129371E5F000D4F33 /* LinkAccountViewController.swift */,
+				630A821529372322000D4F33 /* NetworkManager.swift */,
+				630A8217293725CD000D4F33 /* Token.swift */,
+				630A821B29372CF9000D4F33 /* TopArtistsTableViewController.swift */,
+				630A821D293739BA000D4F33 /* Artist.swift */,
 			);
 			path = Spotifly;
 			sourceTree = "<group>";
@@ -141,9 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630A82102936D13A000D4F33 /* LoginViewController.swift in Sources */,
+				630A821229371E5F000D4F33 /* LinkAccountViewController.swift in Sources */,
 				63088D082928804300A243EF /* ViewController.swift in Sources */,
+				630A821629372322000D4F33 /* NetworkManager.swift in Sources */,
+				630A821C29372CF9000D4F33 /* TopArtistsTableViewController.swift in Sources */,
+				630A8218293725CD000D4F33 /* Token.swift in Sources */,
 				63088D042928804300A243EF /* AppDelegate.swift in Sources */,
+				630A821E293739BA000D4F33 /* Artist.swift in Sources */,
 				63088D062928804300A243EF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

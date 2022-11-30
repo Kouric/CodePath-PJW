@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Link Account View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LinkAccountViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,11 +34,11 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Login"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Login">
+                                <buttonConfiguration key="configuration" style="filled" title="Link">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XjZ-Jx-epr"/>
+                                    <action selector="linkAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bc-I5-I35"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,17 +46,18 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <segue destination="iph-0Q-bZT" kind="presentation" identifier="LoginToHome" id="Us8-2h-Ssr"/>
+                        <outlet property="linkButton" destination="vkS-iL-N9a" id="kff-N2-fsD"/>
+                        <segue destination="iph-0Q-bZT" kind="presentation" identifier="LinkToHome" id="Us8-2h-Ssr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="80.357142857142847"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Top Artists-->
         <scene sceneID="Oy7-58-Bdb">
             <objects>
-                <tableViewController id="aQc-3B-ZXk" sceneMemberID="viewController">
+                <tableViewController id="aQc-3B-ZXk" customClass="TopArtistsTableViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ObU-im-q2W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +77,7 @@
                             <outlet property="delegate" destination="aQc-3B-ZXk" id="FJS-6k-jEh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="VkV-yH-OUo"/>
+                    <navigationItem key="navigationItem" title="Top Artists" id="VkV-yH-OUo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmA-gs-5O0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
