@@ -57,7 +57,7 @@
         <!--Top Artists-->
         <scene sceneID="7np-Py-8lE">
             <objects>
-                <tableViewController id="Mat-q9-piy" customClass="ArtistsTableViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="Mat-q9-piy" customClass="ArtistsTableViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="W7K-be-EVU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,10 +86,10 @@
         <!--Navigation Controller-->
         <scene sceneID="P1M-kp-Sk1">
             <objects>
-                <navigationController id="8Uz-w4-zPi" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="8Uz-w4-zPi" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5ic-y8-cBB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dSv-Uu-REx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
