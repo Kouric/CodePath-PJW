@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		63088D0B2928804300A243EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63088D092928804300A243EF /* Main.storyboard */; };
 		63088D0D2928804400A243EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63088D0C2928804400A243EF /* Assets.xcassets */; };
 		63088D102928804400A243EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63088D0E2928804400A243EF /* LaunchScreen.storyboard */; };
+		630A82102936D13A000D4F33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A820F2936D13A000D4F33 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		63088D0C2928804400A243EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63088D0F2928804400A243EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63088D112928804400A243EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630A820F2936D13A000D4F33 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				63088D0C2928804400A243EF /* Assets.xcassets */,
 				63088D0E2928804400A243EF /* LaunchScreen.storyboard */,
 				63088D112928804400A243EF /* Info.plist */,
+				630A820F2936D13A000D4F33 /* LoginViewController.swift */,
 			);
 			path = Spotifly;
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 				};
 			};
 			buildConfigurationList = 63088CFB2928804300A243EF /* Build configuration list for PBXProject "Spotifly" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630A82102936D13A000D4F33 /* LoginViewController.swift in Sources */,
 				63088D082928804300A243EF /* ViewController.swift in Sources */,
 				63088D042928804300A243EF /* AppDelegate.swift in Sources */,
 				63088D062928804300A243EF /* SceneDelegate.swift in Sources */,
