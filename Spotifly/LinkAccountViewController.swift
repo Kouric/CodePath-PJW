@@ -98,8 +98,10 @@ extension LinkAccountViewController: WKNavigationDelegate {
             fetchSpotifyProfile(accessToken: spotifyAccessToken)
 
             // Close Spotify Auth ViewController after getting Access Token
-            self.dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "LinkSegue", sender: self)
+        self.dismiss(animated: true, completion: {
+            self.performSegue(withIdentifier: "LinkSegue", sender: nil)
+        })
+            
         }
 
 
