@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Spotifly
 //
-//  Created by David Barcenas on 11/18/22.
+//  Created by D Barcenas, W Eltus, S Garcia, M Aguiar on 11/18/22.
 //
 
 import UIKit

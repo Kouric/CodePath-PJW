@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,6 +82,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3L-4y-JZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1670" y="80"/>
+        </scene>
+        <!--Wrapped View Controller-->
+        <scene sceneID="gSm-hL-LUv">
+            <objects>
+                <viewController storyboardIdentifier="WrappedViewController" id="Gud-OM-2bR" customClass="WrappedViewController" customModule="Spotifly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NIX-Gm-Z2H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-5Y-PEj">
+                                <rect key="frame" x="8" y="64" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="398" id="7LY-15-eCa"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP STREAMED ARTIST" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpm-hn-3IP">
+                                <rect key="frame" x="8" y="472" width="296" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOTAL MINUTES PLAYED" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mH-yd-Bjj">
+                                <rect key="frame" x="8" y="525" width="386" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-DF-HFY">
+                                <rect key="frame" x="27" y="503" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uz-a6-y18">
+                                <rect key="frame" x="27" y="560" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qni-xq-oBM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dpm-hn-3IP" firstAttribute="top" secondItem="Mnv-5Y-PEj" secondAttribute="bottom" constant="20" id="0Zu-nz-kv1"/>
+                            <constraint firstItem="dpm-hn-3IP" firstAttribute="top" secondItem="Mnv-5Y-PEj" secondAttribute="bottom" constant="10" id="1HM-b3-ji0"/>
+                            <constraint firstItem="5Uz-a6-y18" firstAttribute="top" secondItem="Mnv-5Y-PEj" secondAttribute="bottom" constant="10" id="7iK-D8-G8W"/>
+                            <constraint firstItem="Mnv-5Y-PEj" firstAttribute="top" secondItem="qni-xq-oBM" secondAttribute="top" constant="20" id="Ega-zN-dvr"/>
+                            <constraint firstItem="5Uz-a6-y18" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="8" id="F7e-uH-QLV"/>
+                            <constraint firstItem="6mH-yd-Bjj" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="8" id="JiP-Rj-hx4"/>
+                            <constraint firstItem="6mH-yd-Bjj" firstAttribute="top" secondItem="Mnv-5Y-PEj" secondAttribute="bottom" constant="15" id="MSH-gm-Ct1"/>
+                            <constraint firstItem="AOw-DF-HFY" firstAttribute="top" secondItem="dpm-hn-3IP" secondAttribute="bottom" constant="20" id="hSe-a1-oaq"/>
+                            <constraint firstItem="dpm-hn-3IP" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="8" id="kZE-GV-xew"/>
+                            <constraint firstItem="Mnv-5Y-PEj" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="8" id="lr1-av-AEq"/>
+                            <constraint firstItem="dpm-hn-3IP" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="8" id="mZN-Qm-E4F"/>
+                            <constraint firstItem="qni-xq-oBM" firstAttribute="trailing" secondItem="Mnv-5Y-PEj" secondAttribute="trailing" constant="8" id="pWo-DO-kDL"/>
+                            <constraint firstItem="AOw-DF-HFY" firstAttribute="leading" secondItem="qni-xq-oBM" secondAttribute="leading" constant="10" id="rHL-lE-cXJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AlbumArt" destination="Mnv-5Y-PEj" id="hZN-Ba-wXZ"/>
+                        <outlet property="TopStreamedArtist" destination="AOw-DF-HFY" id="3Dz-gr-cpy"/>
+                        <outlet property="TotalMinutesPlayed" destination="6mH-yd-Bjj" id="9r6-2f-EgT"/>
+                        <outlet property="TotalStreamedMinutes" destination="5Uz-a6-y18" id="Ogk-oj-ZHM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mki-96-cxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2524.6376811594205" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P1M-kp-Sk1">

@@ -2,7 +2,7 @@
 //  Constants.swift
 //  Spotifly
 //
-//  Created by David Barcenas on 11/30/22.
+//  Created by D Barcenas, W Eltus, S Garcia, M Aguiar on 11/30/22.
 //
 
 import Foundation
